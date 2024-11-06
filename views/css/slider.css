@@ -629,7 +629,7 @@ html{
 
 
 .category-moca{
-    background-image: linear-gradient(#00000080,#00000080) , url(/img/illia.jpg);
+    background-image: linear-gradient(#00000080,#00000080) , url(/img/special1.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -638,7 +638,7 @@ html{
 }
 
 .category-capuchino{
-    background-image: linear-gradient(#00000080,#00000080) , url(/img/illia.jpg);
+    background-image: linear-gradient(#00000080,#00000080) , url(/img/special2.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -647,7 +647,7 @@ html{
 }
 
 .category-expreso{
-    background-image: linear-gradient(#00000080,#00000080) , url(/img/illia.jpg);
+    background-image: linear-gradient(#00000080,#00000080) , url(/img/special3.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

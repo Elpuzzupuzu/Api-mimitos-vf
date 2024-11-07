@@ -112,16 +112,16 @@ h1 {
             0 0 5px #ff5733,   
             0 0 10px #ff5733,  
             0 0 15px #ff5733,  
-            0 0 20px #2196F3,  /* Azul fuerte */
-            0 0 30px #2196F3,  
-            0 0 40px #2196F3;  
+            0 0 20px #f36421,  /* Azul fuerte */
+            0 0 30px #f35d21,  
+            0 0 40px #f36721;  
     }
     50% {
-        color: #2196F3; /* Azul fuerte */
+        color: #f37521; /* Azul fuerte */
         text-shadow: 
-            0 0 5px #2196F3,   
-            0 0 10px #2196F3,  
-            0 0 15px #2196F3,  
+            0 0 5px #f38321,   
+            0 0 10px #fd6316,  
+            0 0 15px #ff631a,  
             0 0 20px #ffff00,  
             0 0 30px #ffff00,  
             0 0 40px #ffff00;  

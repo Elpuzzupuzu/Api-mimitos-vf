@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-    --clr-main: #c11c5b;
-    --clr-main-light: #e65a82;
-    --clr-white: #d8aada;
+    --clr-main: #ff651d;
+    --clr-main-light: #191818;
+    --clr-white: #0e0d0d;
     --clr-gray: hsl(0, 11%, 80%);
     --clr-red: #961818;
-    --clr-pink: #f4c2c2;
+    --clr-pink: #2a2a2a;
 }
 
 * {

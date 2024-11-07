@@ -59,7 +59,7 @@ document.getElementById('crearUsuarioForm').addEventListener('submit', async fun
         document.getElementById('birthdate').value = '';
 
         // Redirigir a la página de inicio de sesión (login.html)
-        window.location.href = '../views/index.html';
+        window.location.href = '/views/index.html';
 
     } catch (error) {
         console.error('Error:', error.message);

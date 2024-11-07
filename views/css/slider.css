@@ -970,7 +970,7 @@ html{
 .content-card-product .price {
     font-size: 1.5rem;
     font-weight: 400;
-    color: #e90d4f;
+    color: #121212;
     margin-left: .1rem;
     animation: destello 2s infinite; /* Ajustamos la duración a 2 segundos */
 }
@@ -991,7 +991,7 @@ html{
 .content-card-product .stock {
     font-size: 1.5rem;
     font-weight: 400;
-    color: #e90d6c;
+    color: #131212;
     margin-left: 1.2rem;
     animation: destello 2s infinite; /* Ajustamos la duración a 2 segundos */
 }

@@ -55,7 +55,7 @@ async function fetchAndRenderProduct() {
 
             const productHtml = `
                 <div class="breadcrumb">
-                    <a href="index.html">Home</a> / <a href="#">${product.season}</a> / <a href="#">Plush Toys</a> / ${product.name}
+                    <a href="main.html">Home</a> / <a href="#">${product.season}</a> / <a href="#">Plush Toys</a> / ${product.name}
                 </div>
 
                 <div class="product-container">
@@ -78,7 +78,7 @@ async function fetchAndRenderProduct() {
 
                             <div class="delivery">
                                 <p>Delivery</p>
-                                <p><span class="highlight">Historia:</span> ${product.description}</p>
+                                <p><span class="highlight">Description:</span> ${product.description}</p>
                             </div>
 
                             <div class="shipping-estimation">

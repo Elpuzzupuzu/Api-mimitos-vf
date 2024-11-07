@@ -1,6 +1,6 @@
 body {
     font-family: 'Poppins', sans-serif; /* Cambiar a la fuente Poppins */
-    background-color: #323032; /* Fondo más suave */
+    background-color: #141414; /* Fondo más suave */
     margin: 0;
     padding: 20px;
 }
@@ -8,7 +8,7 @@ body {
 .product-page {
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #ffffff;
+    background-color: #323131;
     padding: 20px;
     border-radius: 10px; /* Bordes más redondeados */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
@@ -17,11 +17,11 @@ body {
 .breadcrumb {
     font-size: 14px;
     margin-bottom: 20px;
-    color: #555; /* Color de texto más suave */
+    color: #f7511a; /* Color de texto más suave */
 }
 
 .breadcrumb a {
-    color: #007bff; /* Color azul para los enlaces */
+    color: #ff9500; /* Color azul para los enlaces */
     text-decoration: none;
 }
 
@@ -40,10 +40,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid #9732bc; /* Borde rojo alrededor de la imagen principal */
+    border: 2px solid #fc7b18; /* Borde rojo alrededor de la imagen principal */
     padding: 10px;
     border-radius: 10px;
-    background-color: #f13b9cfa; /* Fondo ligero para resaltar la imagen */
+    background-color: #1f1e1efa; /* Fondo ligero para resaltar la imagen */
     transition: background-color 0.3s ease; /* Transición suave para el fondo */
     min-width: 300px; /* Ancho mínimo para la imagen */
 }
@@ -85,7 +85,7 @@ body {
 h1 {
     font-size: 26px; /* Tamaño de fuente más grande para el título */
     margin-bottom: 10px;
-    color: #333; /* Color oscuro para el título */
+    color: #ff6309; /* Color oscuro para el título */
 }
 
 .price {
@@ -129,7 +129,7 @@ h1 {
 
 .add-to-cart {
     padding: 12px 24px; /* Aumentar padding para botones */
-    background-color: #db41b2; /* Botón verde */
+    background-color: #ffa113; /* Botón verde */
     color: white;
     border: none;
     border-radius: 4px;
@@ -138,7 +138,7 @@ h1 {
 }
 
 .add-to-cart:hover {
-    background-color: #aa31ac; /* Botón más oscuro al pasar el ratón */
+    background-color: #f8c838; /* Botón más oscuro al pasar el ratón */
 }
 
 .payment-options {

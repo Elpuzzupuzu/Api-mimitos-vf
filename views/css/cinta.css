@@ -42,7 +42,7 @@
 
 #slider-controls button {
     background-color: #ff7b00;
-    color: #f0ec2d;
+    color: rgb(245, 239, 239);
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -52,7 +52,7 @@
 }
 
 #slider-controls button:hover {
-    background-color: #b30057;
+    background-color: #121211;
     transform: translateY(-2px);
 }
 

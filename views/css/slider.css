@@ -262,7 +262,7 @@ html{
     gap: 1rem;
     padding: 1rem 2rem;
     background-color: var(--primary-color);
-    color: #fff;
+    color: #ff6c0a;
     text-decoration: none;
     font-size: 1.6rem;
     font-weight: 600;
@@ -905,8 +905,8 @@ html{
 }
 
 .add-cart{
-    justify-self: start;
-    border: 2px solid var(--primary-color);    /* PRUEBAS*/
+    background-color: orange;
+    border: 2px solid black;    /* PRUEBAS*/
     padding: 1.5rem;
     border-radius: 10%;
     cursor: pointer;
@@ -918,10 +918,13 @@ html{
 }
 
 
+
+
 .play-description{
+    background-color: orange;
     justify-self: start;
     width: 100px;
-    border: 2px solid var(--primary-color);    /* PRUEBAS*/
+    border: 2px solid black;    /* PRUEBAS*/
     padding: 1.5rem;
     border-radius: 10%;
     cursor: pointer;

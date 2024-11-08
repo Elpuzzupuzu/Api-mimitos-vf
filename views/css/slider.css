@@ -95,29 +95,29 @@ h1 {
     }
 }
 
-@keyframes color-change {
+/* @keyframes color-change {
     0% {
-        color: #ffff00; /* Amarillo */
+        color: #ffff00; 
         text-shadow: 
             0 0 5px #ffff00,   
             0 0 10px #ffff00,  
             0 0 15px #ffff00,  
-            0 0 20px #ff5733,  /* Naranja */
+            0 0 20px #ff5733,  
             0 0 30px #ff5733,  
             0 0 40px #ff5733;  
     }
     25% {
-        color: #ff5733; /* Naranja */
+        color: #ff5733; 
         text-shadow: 
             0 0 5px #ff5733,   
             0 0 10px #ff5733,  
             0 0 15px #ff5733,  
-            0 0 20px #f36421,  /* Azul fuerte */
+            0 0 20px #f36421,  
             0 0 30px #f35d21,  
             0 0 40px #f36721;  
     }
     50% {
-        color: #f37521; /* Azul fuerte */
+        color: #f37521; 
         text-shadow: 
             0 0 5px #f38321,   
             0 0 10px #fd6316,  
@@ -127,7 +127,7 @@ h1 {
             0 0 40px #ffff00;  
     }
     75% {
-        color: #ffff00; /* Amarillo */
+        color: #ffff00; 
         text-shadow: 
             0 0 5px #ffff00,   
             0 0 10px #ffff00,  
@@ -137,7 +137,7 @@ h1 {
             0 0 40px #ff5733;  
     }
     100% {
-        color: #ffff00; /* Amarillo */
+        color: #ffff00; 
         text-shadow: 
             0 0 5px #ffff00,   
             0 0 10px #ffff00,  
@@ -148,7 +148,7 @@ h1 {
     }
 }
 
-
+ */
 
 
 
@@ -567,7 +567,7 @@ html{
     justify-content: center;
     gap: 1.5rem;
 
-    background-color: #fff;
+    background-color: #131212;
     border-radius: 1rem;
     padding: 1.5rem 0;
 
@@ -586,9 +586,9 @@ html{
 }
 
 .feature-content span{
-    font-weight: 700;
+    font-weight: 700;    /* color del espan feature content */
     font-size: 1.2rem;
-    color: var(--dark-color);
+    color: white;
 
 }
 
@@ -721,8 +721,8 @@ html{
 }
 
 .container-options button{
-    color:#777;
-    background-color: #fff;  /* esto de la color a los botones*/
+    color:#ffffff;
+    background-color: #0e0d0d;  /* esto de la color a los botones*/
     padding: .7rem 3rem;
     font-size: 1.4rem;
     text-transform: capitalize;

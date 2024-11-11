@@ -209,7 +209,7 @@ h1 {
 
 :root{
     --primary-color: #ff800a;
-    --background-color: #2d2e30;   /* color princi  */
+    --background-color: #1c1c1d;   /* color princi  */
     --dark-color: #000000;
 
   
@@ -339,6 +339,7 @@ html{
 }
 
 .container-logo i{
+    color: orange;
     font-size: 3rem;
 
 }
@@ -347,7 +348,7 @@ html{
 
 .container-logo h1 a{
     text-decoration: none;
-    color: #000;
+    color: #fffbfb;
     font-size: 3rem;
     text-transform: uppercase;
     letter-spacing: -1px;
@@ -442,6 +443,7 @@ html{
 }
 
 .search-form{
+    margin-left: auto;   /*CAMBIOS 8 DE NOV */
     position: relative;
     display: flex;
     align-items: center;

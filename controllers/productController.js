@@ -11,6 +11,19 @@ exports.getAllProducts = async (req, res) => {
 
 
 
+// exports.getAllProducts = async (req, res) => {
+//     try {
+//         throw new Error("Simulated error");
+//         const products = await productService.getAllProducts();
+//         res.json(products);
+//     } catch (error) {
+//         res.status(500).json({ error: error.message });
+//     }
+// };
+
+
+
+
 exports.getProductById = async (req, res) => {
     try {
         const id = req.params.id;
@@ -35,10 +48,20 @@ exports.getProductById = async (req, res) => {
 
 exports.getLimitEditionProducts = async (req, res) => {
     try {
-        const products = await productService.getLimitEditionProducts();
+        // Llama al servicio para obtener los productos de edición limitada
+        const products = await productService.getallLimitEditionProducts();
+        
+        // Si se encuentran productos, se devuelven como respuesta
         res.json(products);
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        // Si ocurre un error, se captura y se responde con el error
+        if (error.message === 'No se encontraron productos de edición limitada.') {
+            // En caso de que no se encuentren productos, responder con un 404
+            res.status(404).json({ message: error.message });
+        } else {
+            // Para otros errores, responder con un 500
+            res.status(500).json({ error: error.message });
+        }
     }
 };
 
@@ -94,4 +117,32 @@ exports.getLimitEditionSlider = async (req, res) => {
 };
 
 
+//update product
 
+
+exports.updateProductStock = async (req, res) => {
+    try {
+        const productId = req.params.id; // Obtenemos el ID del producto desde la URL
+        const { quantity } = req.body; // Obtenemos la cantidad desde el cuerpo de la solicitud
+
+        // Validamos que la cantidad sea un número positivo
+        if (!quantity || quantity <= 0) {
+            return res.status(400).json({ error: 'La cantidad debe ser un número positivo' });
+        }
+
+        // Llamamos al servicio para actualizar el stock
+        const updatedProduct = await productService.updateProductStock(productId, quantity);
+        
+        // Si el producto se actualiza correctamente, lo devolvemos como respuesta
+        res.status(200).json({
+            message: 'Stock actualizado correctamente',
+            product: updatedProduct
+        });
+    } catch (error) {
+        // Si ocurre algún error, lo capturamos y respondemos con un mensaje adecuado
+        if (error.message === 'Producto no encontrado') {
+            return res.status(404).json({ error: error.message });
+        }
+        res.status(500).json({ error: error.message });
+    }
+};

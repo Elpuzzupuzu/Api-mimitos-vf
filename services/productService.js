@@ -15,14 +15,42 @@ exports.getProductById = async (productId) => {
 
 
 
+exports.getallLimitEditionProducts = async () => {
+    try {
+        // Realiza la consulta a la base de datos para obtener productos con edición limitada
+        const products = await Product.findAll({
+            where: {
+                limit_edition: true
+            }
+        });
 
-exports.getLimitEditionProducts = async () => {
-    return await Product.findAll({
-        where: {
-            limit_edition: true
+        // Verifica si se encontraron productos
+        if (!products || products.length === 0) {
+            // Lanza un error si no se encuentran productos
+            throw new Error('No se encontraron productos de edición limitada.');
         }
-    });
+
+        // Devuelve los productos encontrados
+        return products;
+    } catch (error) {
+        // Manejo del error: log y mensaje
+        console.error("Error al obtener productos de edición limitada:", error.message);
+        throw new Error('Error al obtener productos de edición limitada: ' + error.message);
+    }
 };
+
+
+
+
+
+
+// exports.getLimitEditionProducts = async () => {  // aqui esta el erro
+//     return await Product.findAll({
+//         where: {
+//             limit_edition: true
+//         }
+//     });
+// };
 
 
 

@@ -43,7 +43,7 @@ function cargarProductosCarrito() {
                     <small>subtotal</small>
                     <p>${producto.price * producto.sold}</p>
                 </div>
-                <button class="carrito-producto-eliminar" id="${producto.id}"><i class="bi bi-trash-fill"></i></button>
+                <button class="carrito-producto-eliminar" id="${producto.id_product}"><i class="bi bi-trash-fill"></i></button>
             `;
             contenedorCarritoProductos.append(div);
         });
@@ -73,7 +73,7 @@ function actualizarBotonesEliminar() {
 // Función para eliminar productos del carrito
 function eliminarDelCarrito(e) {
     const idBoton = parseInt(e.currentTarget.id); // Convertir el id a entero si es necesario
-    const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
+    const index = productosEnCarrito.findIndex(producto => producto.id_product === idBoton);
 
     productosEnCarrito.splice(index, 1);
     cargarProductosCarrito();
@@ -95,12 +95,20 @@ function actualizarTotal() {
     contenedorTotal.innerText = `$${totalCalculado}`;
 }
 
+
+
+
 // Función para manejar la compra
 async function comprarCarrito() {
     const userId = localStorage.getItem("id_user"); // Obtener el userId desde localStorage
 
     if (!userId) {
-        alert("No se encontró el ID de usuario. Inicia sesión para continuar.");
+        Swal.fire({
+            icon: 'warning',
+            title: 'No se encontró el ID de usuario',
+            text: 'Inicia sesión para continuar.',
+            confirmButtonText: 'Aceptar'
+        });
         return;
     }
 
@@ -121,9 +129,15 @@ async function comprarCarrito() {
             cargarProductosCarrito();
             contenedorCarritoComprado.classList.remove("disabled");
             contenedorCarritoAcciones.classList.add("disabled");
-            alert("Compra realizada con éxito");
 
-                        // Limpiar el carrito después de la compra
+            Swal.fire({
+                icon: 'success',
+                title: 'Compra realizada con éxito',
+                showConfirmButton: false,
+                timer: 2000
+            });
+
+            // Limpiar el carrito después de la compra
             productosEnCarrito.length = 0;
             localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 
@@ -133,19 +147,25 @@ async function comprarCarrito() {
             contenedorCarritoAcciones.classList.add("disabled");
             contenedorCarritoComprado.classList.remove("disabled");
 
-
         } else {
             const errorData = await response.json();
-            alert(`Error al realizar la compra: ${errorData.error}`);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error al realizar la compra',
+                text: errorData.error,
+                confirmButtonText: 'Aceptar'
+            });
         }
     } catch (error) {
-        alert(`Error en el servidor: ${error.message}`);
+        Swal.fire({
+            icon: 'error',
+            title: 'Error en el servidor',
+            text: error.message,
+            confirmButtonText: 'Aceptar'
+        });
     }
-
-
-
-
 }
+
 
 // Asignar la función al botón de comprar
 botonComprar.addEventListener("click", comprarCarrito);

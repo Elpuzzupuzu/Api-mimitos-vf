@@ -102,7 +102,7 @@ function actualizarTotal() {
 
 // Función para manejar la compra
 async function comprarCarrito() {
-    const userId = localStorage.getItem("id_user"); // Obtener el userId desde localStorage
+    const userId = localStorage.getItem("id_user"); // Obtener el id_user desde localStorage
 
     if (!userId) {
         Swal.fire({
@@ -115,13 +115,15 @@ async function comprarCarrito() {
     }
 
     try {
+        // Aquí incluimos el id_user junto con los productos en el cuerpo de la solicitud
         const response = await fetch(`http://localhost:3000/cart/${userId}/purchase`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                productosEnCarrito: productosEnCarrito
+                id_user: userId,  // Incluir el id_user aquí
+                productosEnCarrito: productosEnCarrito // Los productos en el carrito
             })
         });
 
@@ -167,6 +169,7 @@ async function comprarCarrito() {
         });
     }
 }
+
 
 
 // Asignar la función al botón de comprar

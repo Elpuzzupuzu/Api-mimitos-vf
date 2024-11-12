@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Variables
     let productosEnCarrito = JSON.parse(window.localStorage.getItem("productos-en-carrito")) || [];
     let currentPage = 1;
-    const pageSize = 5;
+    const pageSize = 6;
     const numerito = document.getElementById('numerito');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');

@@ -5,7 +5,12 @@ exports.getCartByUserId = async (userId) => {
 };
 
 exports.createCart = async (data) => {
-    return await Cart.create(data);
+    try {
+        const cart = await Cart.create(data);  // Crear el carrito con los datos proporcionados
+        return cart;
+    } catch (error) {
+        throw new Error(`Error al crear el carrito: ${error.message}`);
+    }
 };
 
 

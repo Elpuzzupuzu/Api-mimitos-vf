@@ -41,7 +41,8 @@ function cargarProductosCarrito() {
                 </div>
                 <div class="carrito-producto-subtotal">
                     <small>subtotal</small>
-                    <p>${producto.price * producto.sold}</p>
+                    <p>$${(producto.price * producto.sold).toFixed(2)}</p>
+
                 </div>
                 <button class="carrito-producto-eliminar" id="${producto.id_product}"><i class="bi bi-trash-fill"></i></button>
             `;
@@ -92,8 +93,9 @@ function vaciarCarrito() {
 // Función para actualizar el total
 function actualizarTotal() {
     const totalCalculado = productosEnCarrito.reduce((acc, producto) => acc + (producto.price * producto.sold), 0);
-    contenedorTotal.innerText = `$${totalCalculado}`;
+    contenedorTotal.innerText = `$${totalCalculado.toFixed(2)}`;
 }
+
 
 
 

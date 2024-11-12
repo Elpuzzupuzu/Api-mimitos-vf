@@ -13,6 +13,17 @@ exports.createCart = async (data) => {
     }
 };
 
+// Obtener todos los carritos
+exports.getAllCarts = async () => {
+    try {
+        // Buscar todos los carritos en la base de datos
+        const carts = await Cart.findAll();
+        return carts;
+    } catch (error) {
+        throw new Error(`Error al obtener todos los carritos: ${error.message}`);
+    }
+};
+
 
 exports.emptyCart = async (userId) => {
     return await Cart.destroy({ where: { id_user: userId } });

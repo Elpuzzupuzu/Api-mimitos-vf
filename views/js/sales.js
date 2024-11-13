@@ -3,7 +3,7 @@ document.getElementById("loadCartsButton").addEventListener("click", async () =>
     cartsList.innerHTML = ''; // Limpiar la lista antes de cargar nuevos datos
 
     try {
-        const response = await fetch("http://localhost:3000/cart/getallsales");
+        const response = await fetch("https://api-bikelike-vf.onrender.com/cart/getallsales");
         
         if (response.ok) {
             const carts = await response.json();

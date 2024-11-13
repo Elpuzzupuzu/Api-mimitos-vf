@@ -20,7 +20,6 @@ const Cart = sequelize.define('Cart', {
         allowNull: false
     }
 }, {
-    tableName: 'carts',  // Especifica que la tabla en la base de datos se llama 'carts'
     timestamps: false
 });
 

@@ -31,7 +31,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
             localStorage.setItem('userCart', JSON.stringify(userCart));
 
             // Redirigir a la página principal (index.html)
-            window.location.href = './views/main.html';
+            window.location.href = '../main.html';
         } else {
             // Mostrar el mensaje de error en la interfaz
             alert(data.message || 'Error en las credenciales');

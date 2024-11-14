@@ -1,7 +1,7 @@
 // Obtener el productId de la URL de manera dinámica
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('productId'); // Obtiene el ID del producto desde la URL
-const apiUrl = `http://localhost:3000/api/products/${productId}`;
+const apiUrl = `https://api-bikelike-vf.onrender.com/api/products/${productId}`;
 
 // Variables del carrito
 let productos = [];  // Lista de productos para almacenar el producto cargado

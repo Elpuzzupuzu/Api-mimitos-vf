@@ -493,7 +493,7 @@ html{
 /*  BANNER----------------*/
 
 .banner{
-    background-image: linear-gradient(100deg,#000,#00000020),   url('/img/bikebg.jpg');
+    background-image: linear-gradient(100deg,#000,#00000020),   url('./img/bikebg.jpg');
     height: 60rem;
     background-size: cover;
     background-position: center;

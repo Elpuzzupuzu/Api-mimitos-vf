@@ -6,7 +6,7 @@
 
 #product-slider {
     display: flex;
-    overflow-x: auto;  /* aqui esta la clave del responsive
+    /* overflow-x: auto;  /* aqui esta la clave del responsive  */
     scroll-behavior: smooth; /* Para un desplazamiento suave */
     gap: 10px; /* Espacio entre productos */
     width: 100%; /* Asegúrate de que el slider ocupe todo el ancho disponible */

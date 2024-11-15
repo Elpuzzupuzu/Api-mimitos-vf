@@ -1,19 +1,19 @@
 let productos = []; // Almacena los productos obtenidos del backend
-async function getAllProducts() {
+// async function getAllProducts() {
 
-    try {
-        const response = await fetch('https://api-bikelike-vf.onrender.com/api/products/getall');
-        if (!response.ok) throw new Error('Network response was not ok');
-        const products = await response.json();
+//     try {
+//         const response = await fetch('https://api-bikelike-vf.onrender.com/api/products/getall');
+//         if (!response.ok) throw new Error('Network response was not ok');
+//         const products = await response.json();
 
-        productos = products; // Guardar los productos
-        //displayProducts(products);    <<<------LOGICA QUE SE ESTA TESTEANDO DEL SLIDER
-    } catch (error) {
-        console.error('Error fetching products:', error);
-    }
-}
+//         productos = products; // Guardar los productos
+//         //displayProducts(products);    <<<------LOGICA QUE SE ESTA TESTEANDO DEL SLIDER
+//     } catch (error) {
+//         console.error('Error fetching products:', error);
+//     }
+// }
 
-getAllProducts();
+// getAllProducts();
 
 document.addEventListener('DOMContentLoaded', function () {
     // Variables
@@ -25,6 +25,35 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextBtn = document.getElementById('next-btn');
     const productsContainer = document.getElementById('products-container');
     const slider = document.getElementById('product-slider');
+
+
+    async function fetchProducts(page) {
+        try {
+            const response = await fetch(`https://api-bikelike-vf.onrender.com/api/products/slider?page=${page}&pageSize=${pageSize}`);
+            if (!response.ok) throw new Error('Error al obtener los productos');
+            const products = await response.json();
+            productos=products;
+
+
+
+
+            // Renderizar los productos en el slider
+            renderProducts(data.products);
+          
+
+
+            // Manejar botones de paginación
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = currentPage >= data.totalPages;
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+
+
+
+
 
     // Asegurarte que los elementos existan antes de manipularlos
     if (!numerito || !prevBtn || !nextBtn || !productsContainer || !slider) {

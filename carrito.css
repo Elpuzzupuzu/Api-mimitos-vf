@@ -246,3 +246,32 @@ main {
 }
 
 
+.carrito-acciones-vaciar {
+    background-color: #ff4d4d; /* Rojo llamativo */
+    color: #ffffff; /* Texto blanco */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño de texto */
+    cursor: pointer; /* Indicador de clic */
+    transition: background-color 0.3s ease; /* Efecto de transición */
+}
+
+.carrito-acciones-vaciar:hover {
+    background-color: #e60000; /* Color al pasar el ratón */
+}
+
+.carrito-acciones-comprar {
+    background-color: #4CAF50; /* Verde */
+    color: #ffffff; /* Texto blanco */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño de texto */
+    cursor: pointer; /* Indicador de clic */
+    transition: background-color 0.3s ease; /* Efecto de transición */
+}
+
+.carrito-acciones-comprar:hover {
+    background-color: #45a049; /* Color al pasar el ratón */
+}

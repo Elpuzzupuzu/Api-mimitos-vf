@@ -95,60 +95,8 @@ h1 {
     }
 }
 
-/* @keyframes color-change {
-    0% {
-        color: #ffff00; 
-        text-shadow: 
-            0 0 5px #ffff00,   
-            0 0 10px #ffff00,  
-            0 0 15px #ffff00,  
-            0 0 20px #ff5733,  
-            0 0 30px #ff5733,  
-            0 0 40px #ff5733;  
-    }
-    25% {
-        color: #ff5733; 
-        text-shadow: 
-            0 0 5px #ff5733,   
-            0 0 10px #ff5733,  
-            0 0 15px #ff5733,  
-            0 0 20px #f36421,  
-            0 0 30px #f35d21,  
-            0 0 40px #f36721;  
-    }
-    50% {
-        color: #f37521; 
-        text-shadow: 
-            0 0 5px #f38321,   
-            0 0 10px #fd6316,  
-            0 0 15px #ff631a,  
-            0 0 20px #ffff00,  
-            0 0 30px #ffff00,  
-            0 0 40px #ffff00;  
-    }
-    75% {
-        color: #ffff00; 
-        text-shadow: 
-            0 0 5px #ffff00,   
-            0 0 10px #ffff00,  
-            0 0 15px #ffff00,  
-            0 0 20px #ff5733,  
-            0 0 30px #ff5733,  
-            0 0 40px #ff5733;  
-    }
-    100% {
-        color: #ffff00; 
-        text-shadow: 
-            0 0 5px #ffff00,   
-            0 0 10px #ffff00,  
-            0 0 15px #ffff00,  
-            0 0 20px #ff5733,  
-            0 0 30px #ff5733,  
-            0 0 40px #ff5733;  
-    }
-}
 
- */
+ 
 
 
 
@@ -755,7 +703,7 @@ html{
 }
 /* tarjeta de productos  */
 .card-product{
-    background-color: #333;   /*  ESTE ES EL FONDO DE LOS PRODCUCTOS DEL SLIDER*/
+    background-color: #1c1c1d;   /*  ESTE ES EL FONDO DE LOS PRODCUCTOS DEL SLIDER*/
     padding: 2rem 3rem;
     border-radius: 5rem;
     cursor: pointer;
@@ -907,7 +855,7 @@ html{
 }
 
 .add-cart{
-    background-color: #ff6506;
+    background-color: #ff6c0a;
     border: 2px solid black;    /* PRUEBAS*/
     padding: 1.5rem;
     border-radius: 10%;
@@ -923,7 +871,7 @@ html{
 
 
 .play-description{
-    background-color: #ff6506;
+    background-color: #ff6c0a;
     justify-self: start;
     width: 100px;
     border: 2px solid black;    /* PRUEBAS*/
@@ -975,7 +923,7 @@ html{
 .content-card-product .price {
     font-size: 1.5rem;
     font-weight: 400;
-    color: #ff6506;
+    color: #ff6c0a;
     margin-left: .1rem;
     animation: destello 2s infinite; /* Ajustamos la duración a 2 segundos */
 }

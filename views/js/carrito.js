@@ -116,7 +116,7 @@ async function comprarCarrito() {
 
     try {
         // Aquí incluimos el id_user junto con los productos en el cuerpo de la solicitud
-        const response = await fetch(`https://api-bikelike-vf/cart/${userId}/purchase`, {
+        const response = await fetch(`https://api-bikelike-vf.onrender.com/cart/${userId}/purchase`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -116,7 +116,7 @@ async function comprarCarrito() {
 
     try {
         // Aquí incluimos el id_user junto con los productos en el cuerpo de la solicitud
-        const response = await fetch(`http://localhost:3000/cart/${userId}/purchase`, {
+        const response = await fetch(`${clevercloud}/cart/${userId}/purchase`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

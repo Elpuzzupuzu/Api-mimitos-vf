@@ -8,25 +8,26 @@
 
 #product-slider {
     display: flex;
-    overflow-x: auto; /* Mantiene el desplazamiento horizontal */
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
     scroll-behavior: smooth; /* Desplazamiento suave */
     gap: 10px; /* Espacio entre productos */
     width: 100%; /* Ocupa todo el ancho */
 }
 
 #product-slider::-webkit-scrollbar {
-    height: 8px; /* Aumenta la altura de la barra */
+    height: 8px; /* Altura de la barra de desplazamiento */
 }
 
 #product-slider::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.4); /* Color más visible */
+    background-color: #ff6c22; /* Color principal de la barra */
     border-radius: 10px; /* Bordes redondeados */
-    border: 2px solid rgba(255, 255, 255, 0.5); /* Borde para un contraste sutil */
+    border: 2px solid #ffffff; /* Bordes blancos para un contraste limpio */
 }
 
 #product-slider::-webkit-scrollbar-track {
-    background: rgba(240, 240, 240, 0.8); /* Fondo claro para distinguir la barra */
+    background: #f0f0f0; /* Color del fondo del track */
 }
+
 
 
 

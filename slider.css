@@ -701,27 +701,56 @@ html{
     gap: 3rem;
 
 }
-/* tarjeta de productos  */
-.card-product{
-    background-color: #1c1c1d;   /*  ESTE ES EL FONDO DE LOS PRODCUCTOS DEL SLIDER*/
-    padding: 2rem 3rem;
-    border-radius: 5rem;
+
+
+
+
+/* Contenedor principal */
+.container-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Tarjeta del producto */
+.card-product {
+    background-color: #1c1c1d; /* Fondo oscuro elegante */
+    padding: 2rem;
+    border-radius: 15px; /* Bordes redondeados */
     cursor: pointer;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
 }
 
+.card-product:hover {
+    transform: translateY(-10px); /* Efecto de elevación */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
 
-.container-img{
+/* Imagen del producto */
+.container-img {
     position: relative;
-
+    margin-bottom: 1rem;
 }
 
-.container-img img{
-    border-radius: .5rem;
-    width: 120px;
-    height: 100px;        /*  pruebas*/ 
-    
+.container-img img {
+    border-radius: 10px;
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover; /* Ajusta la imagen al contenedor */
+    transition: transform 0.3s ease;
 }
+
+.card-product:hover .container-img img {
+    transform: scale(1.05); /* Amplía ligeramente la imagen al pasar el ratón */
+}
+
 
 .container-img .discount{
     position: absolute;
@@ -760,6 +789,10 @@ html{
     border-radius: 50%;
     cursor: pointer;
     transition: all .4s ease;
+}
+
+.stars h3{
+    color:white;
 }
 
 
@@ -854,36 +887,35 @@ html{
 
 }
 
-.add-cart{
-    background-color: #ff6c0a;
-    border: 2px solid black;    /* PRUEBAS*/
-    padding: 1.5rem;
-    border-radius: 10%;
+.add-cart, .play-description {
+    background-color: #ff6c0a; /* Color principal */
+    border: none; /* Elimina los bordes negros */
+    padding: 0.8rem 1.5rem; /* Ajusta el padding para un diseño más compacto */
+    border-radius: 20px; /* Bordes más redondeados */
     cursor: pointer;
-    transition: all .4s ease;
-
+    transition: all 0.3s ease-in-out; /* Animación más fluida */
+    
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Arial', sans-serif; /* Tipografía más limpia */
+    font-size: 1rem; /* Ajusta el tamaño del texto */
+    font-weight: bold; /* Hace el texto más destacado */
+    color: rgb(26, 26, 26); /* Color del texto */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para un efecto flotante */
 }
 
-
-
-
-.play-description{
-    background-color: #ff6c0a;
-    justify-self: start;
-    width: 100px;
-    border: 2px solid black;    /* PRUEBAS*/
-    padding: 1.5rem;
-    border-radius: 10%;
-    cursor: pointer;
-    transition: all .4s ease;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.add-cart:hover, .play-description:hover {
+    background-color: #e65c00; /* Color más oscuro al pasar el ratón */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
 }
+
+.add-cart:active, .play-description:active {
+    transform: scale(1); /* Vuelve al tamaño normal al hacer clic */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); /* Sombra reducida */
+}
+
 
 
 
@@ -956,12 +988,12 @@ html{
 
 
 
-/**----------**/
+
 
    
 
 
-/**---------**/
+/**----FIN DE LAS PRODUCT CARD----**/
 
 
 

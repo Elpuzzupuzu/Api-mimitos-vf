@@ -1,6 +1,6 @@
 
 
-const clevercloud= 'https://bikelike-vf.onrender.com';
+const clevercloud= 'https://api-bikelike-vf.onrender.com';
 const milocal='http://localhost:3000';
 
 

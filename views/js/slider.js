@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextBtn = document.getElementById('next-btn');
     const productsContainer = document.getElementById('products-container');
     const slider = document.getElementById('product-slider');
+    actualizarNumerito();
 
 
     async function fetchProducts(page) {

@@ -21,7 +21,7 @@ document.getElementById('crearUsuarioForm').addEventListener('submit', async fun
 
     try {
         // Enviar datos al servidor para crear el usuario
-        const response = await fetch('https://api-bikelike-vf.onrender.com/users/register', {
+        const response = await fetch('http://localhost:3000/users/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

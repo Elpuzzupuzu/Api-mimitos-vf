@@ -156,8 +156,8 @@ h1 {
 
 
 :root{
-    --primary-color: #ff800a;
-    --background-color: #1c1c1d;   /* color princi  */
+    --primary-color: #fe4ace;
+    --background-color: #1c1c1d;   /* COLOR PRINCIPAL ----------  */
     --dark-color: #000000;
 
   
@@ -210,7 +210,7 @@ html{
     gap: 1rem;
     padding: 1rem 2rem;
     background-color: var(--primary-color);
-    color: #ff6c0a;
+    color: #ff0abe;
     text-decoration: none;
     font-size: 1.6rem;
     font-weight: 600;
@@ -287,7 +287,7 @@ html{
 }
 
 .container-logo i{
-    color: orange;
+    color: rgb(255, 255, 255);
     font-size: 3rem;
 
 }
@@ -318,7 +318,7 @@ html{
 
 .container-user .fa-basket-shopping{
     font-size: 3rem;
-    color: var(--primary-color);
+    color: white;
     padding-left: 1rem;
 
 }
@@ -441,7 +441,7 @@ html{
 /*  BANNER----------------*/
 
 .banner{
-    background-image: linear-gradient(100deg,#000,#00000020),   url('./img/bikebg.jpg');
+    background-image: linear-gradient(100deg,#000,#00000020),   url('./img/squishbg.jpg');
     height: 60rem;
     background-size: cover;
     background-position: center;
@@ -579,7 +579,7 @@ html{
 
 
 .category-moca{
-    background-image: linear-gradient(#00000080,#00000080) , url(/img/special1.jpg);
+    background-image: linear-gradient(#00000080,#00000080) , url(/img/illia.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -588,7 +588,7 @@ html{
 }
 
 .category-capuchino{
-    background-image: linear-gradient(#00000080,#00000080) , url(/img/special2.jpg);
+    background-image: linear-gradient(#00000080,#00000080) , url(/img/illia.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -597,7 +597,7 @@ html{
 }
 
 .category-expreso{
-    background-image: linear-gradient(#00000080,#00000080) , url(/img/special3.jpg);
+    background-image: linear-gradient(#00000080,#00000080) , url(/img/bennt.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -755,7 +755,7 @@ html{
 .container-img .discount{
     position: absolute;
     left: 0;
-    background-color: #f77a0d;
+    background-color: #f70dc4;
     color:#ffffff;
     padding: 2px 1.2rem;
     border-radius: 1rem;
@@ -780,7 +780,7 @@ html{
 }
                                            /* TEST PARA MOSTRAR DATOS     */
 .button-group span{
-    border: 1px solid #f77a0d;
+    border: 1px solid #f70d86;
     padding: .5rem;
 
     display: flex;
@@ -875,6 +875,7 @@ html{
     grid-row: 2/3;
     grid-column: 1/-1;
     font-weight: 400;
+    color: white;   /*  COLOR DEL NOMBRE  */
 
     font-size: 1.6rem;
     margin-bottom: 1rem;
@@ -888,7 +889,7 @@ html{
 }
 
 .add-cart, .play-description {
-    background-color: #ff6c0a; /* Color principal */
+    background-color: #fcf4f9; /* Color principal */
     border: none; /* Elimina los bordes negros */
     padding: 0.8rem 1.5rem; /* Ajusta el padding para un diseño más compacto */
     border-radius: 20px; /* Bordes más redondeados */
@@ -901,12 +902,12 @@ html{
     font-family: 'Arial', sans-serif; /* Tipografía más limpia */
     font-size: 1rem; /* Ajusta el tamaño del texto */
     font-weight: bold; /* Hace el texto más destacado */
-    color: rgb(26, 26, 26); /* Color del texto */
+    color: rgb(21, 21, 21); /* Color del texto */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para un efecto flotante */
 }
 
 .add-cart:hover, .play-description:hover {
-    background-color: #e65c00; /* Color más oscuro al pasar el ratón */
+    background-color: #f9f9f9; /* Color más oscuro al pasar el ratón */
     transform: scale(1.1); /* Aumenta ligeramente el tamaño */
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
 }
@@ -934,7 +935,7 @@ html{
 .add-cart i{
 
     font-size: 1.5rem;
-    color:#000;
+    color:#df1cab;
 }
 
 .add-cart:hover i{
@@ -955,7 +956,7 @@ html{
 .content-card-product .price {
     font-size: 1.5rem;
     font-weight: 400;
-    color: #ff6c0a;
+    color: #ff0aba;
     margin-left: .1rem;
     animation: destello 2s infinite; /* Ajustamos la duración a 2 segundos */
 }
@@ -976,7 +977,7 @@ html{
 .content-card-product .stock {
     font-size: 1.5rem;
     font-weight: 400;
-    color: #ff6506;        /* color del stock */
+    color: #ce309c;        /* color del stock */
     margin-left: 1.2rem;
     animation: destello 2s infinite; /* Ajustamos la duración a 2 segundos */
 }

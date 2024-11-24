@@ -5,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     const password = document.getElementById('password').value;
 
     try {
-        const response = await fetch('https://api-bikelike-vf.onrender.com/users/login', {  // Ajusta la URL a la de tu servidor
+        const response = await fetch('http://localhost:3000/users/login', {  // Ajusta la URL a la de tu servidor
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -41,3 +41,4 @@ document.getElementById('loginForm').addEventListener('submit', async function (
         alert('Ocurrió un problema en el servidor. Intenta de nuevo más tarde.');
     }
 });
+

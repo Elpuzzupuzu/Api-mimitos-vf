@@ -9,7 +9,7 @@ const milocal='http://localhost:3000';
 document.addEventListener('DOMContentLoaded', function () {
     let productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito")) || [];
     let currentPage = 1;
-    const pageSize = 50;
+    const pageSize = 5;
     const numerito = document.getElementById('numerito');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Si no están en localStorage, obtenerlos del backend
         try {
             console.log(`Cargando productos de la página ${page} desde el backend`);
-            const response = await fetch(`${clevercloud}/api/products/slider?page=${page}&pageSize=${pageSize}`);
+            const response = await fetch(`${milocal}/api/products/slider?page=${page}&pageSize=${pageSize}`);
             if (!response.ok) throw new Error('Error al obtener los productos');
             const data = await response.json();
 
@@ -83,7 +83,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         </div>
                         <h3>${product.name}</h3>
                         <button class="add-cart" id="${product.id_product}">
-                            <i class="fa-solid fa-basket-shopping"></i>
+                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+
                         </button>
                         <button class="play-description" id="play-${product.id_product}">
                             <i class="fa-solid fa-volume-high"></i> Escuchar descripción

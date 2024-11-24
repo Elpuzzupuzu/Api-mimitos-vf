@@ -39,11 +39,11 @@ const Product = sequelize.define('Product', {
         type: DataTypes.STRING(100),
         allowNull: false
     },
-    gear_count: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+    // gear_count: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull: false
        
-    },
+    // },
     date_on_sale: {
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW

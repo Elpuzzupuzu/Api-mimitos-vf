@@ -37,7 +37,7 @@ exports.purchaseCart = async (req, res) => {
             // Verificar que hay suficiente stock
             if (producto.sold > product.stock) {
                 return res.status(400).json({ 
-                    error: `No se pudo procesar la compra: no hay suficiente stock para el producto ${product.name} (ID: ${producto.id_product})` 
+                    error: `No se pudo procesar la compra: no hay suficiente stock para el producto ${product.name} )` 
                 });
             }
         }

@@ -7,6 +7,7 @@
 
 
 #product-slider {
+    cursor: pointer;
     display: flex;
     overflow-x: auto; /* Permite el desplazamiento horizontal */
     scroll-behavior: smooth; /* Desplazamiento suave */
@@ -15,11 +16,11 @@
 }
 
 #product-slider::-webkit-scrollbar {
-    height: 8px; /* Altura de la barra de desplazamiento */
+    height: 10px; /* Altura de la barra de desplazamiento */
 }
 
 #product-slider::-webkit-scrollbar-thumb {
-    background-color: #ff6c22; /* Color principal de la barra */
+    background-color: #ff22a3; /* Color principal de la barra */
     border-radius: 10px; /* Bordes redondeados */
     border: 2px solid #ffffff; /* Bordes blancos para un contraste limpio */
 }
@@ -63,7 +64,7 @@
 }
 
 #slider-controls button {
-    background-color: #ff7b00;
+    background-color: #ff00bb;
     color: rgb(245, 239, 239);
     border: none;
     border-radius: 5px;

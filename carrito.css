@@ -82,7 +82,7 @@ aside {
 /* Footer del sidebar */
 .texto-footer {
     margin-top: auto;
-    color: var(--color-text-light);
+    color: #f71997;
     font-size: 0.875rem;
 }
 

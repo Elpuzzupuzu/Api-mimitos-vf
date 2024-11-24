@@ -71,14 +71,41 @@
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animación de salto */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); /* Posición inicial */
+    }
+    40% {
+        transform: translateY(-10px); /* Salta hacia arriba */
+    }
+    60% {
+        transform: translateY(-5px); /* Salta menos alto */
+    }
 }
 
 #slider-controls button:hover {
-    background-color: #121211;
-    transform: translateY(-2px);
+    animation: bounce 0.6s; /* Aplica la animación de salto */
+    background-color: #121211; /* Cambia el color al pasar el cursor */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 #slider-controls button:active {
-    transform: translateY(0);
+    transform: scale(0.95); /* Efecto al hacer clic */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+
+/* CSS  PARA LA VERSION DE COLUMNAS */
+
+
+
+
+
+
+
+

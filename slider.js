@@ -1,15 +1,10 @@
-
-
-const clevercloud= 'https://api-bikelike-vf.onrender.com';
-const milocal='http://localhost:3000';
-
-
-
+const clevercloud = 'https://api-bikelike-vf.onrender.com';
+const milocal = 'http://localhost:3000';
 
 document.addEventListener('DOMContentLoaded', function () {
     let productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito")) || [];
     let currentPage = 1;
-    const pageSize = 5;
+    const pageSize = 8;
     const numerito = document.getElementById('numerito');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
@@ -23,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Función para obtener productos de una página desde el backend o localStorage
     async function fetchProducts(page) {
-        // Verificar si los productos de esta página están en localStorage
         const cachedProducts = JSON.parse(localStorage.getItem(`productos-pagina-${page}`));
         if (cachedProducts) {
             console.log(`Cargando productos de la página ${page} desde localStorage`);
@@ -56,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
             slider.innerHTML = '<p>No se encontraron productos.</p>';
             return;
         }
+        actualizarNumerito();
 
         products.forEach(product => {
             const productDiv = document.createElement('div');
@@ -84,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         <h3>${product.name}</h3>
                         <button class="add-cart" id="${product.id_product}">
                             <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-
                         </button>
                         <button class="play-description" id="play-${product.id_product}">
                             <i class="fa-solid fa-volume-high"></i> Escuchar descripción
@@ -105,6 +99,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.location.href = `producto.html?productId=${product.id_product}`;
             });
         });
+    }
+
+    // Función para reproducir la descripción del producto con ResponsiveVoice
+    function reproducirDescripcion(descripcion) {
+        if (responsiveVoice) {
+            responsiveVoice.speak(descripcion, "Spanish Female");
+        } else {
+            console.error('ResponsiveVoice no está disponible.');
+        }
     }
 
     // Manejar botones de paginación

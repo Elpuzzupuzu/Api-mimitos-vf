@@ -888,14 +888,15 @@ html{
 
 }
 
-.add-cart, .play-description {
+.add-cart,
+.play-description {
     background-color: #fcf4f9; /* Color principal */
     border: none; /* Elimina los bordes negros */
     padding: 0.8rem 1.5rem; /* Ajusta el padding para un diseño más compacto */
     border-radius: 20px; /* Bordes más redondeados */
     cursor: pointer;
     transition: all 0.3s ease-in-out; /* Animación más fluida */
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -904,7 +905,10 @@ html{
     font-weight: bold; /* Hace el texto más destacado */
     color: rgb(21, 21, 21); /* Color del texto */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para un efecto flotante */
+
+    margin: 10px; /* Espacio entre los elementos */
 }
+
 
 .add-cart:hover, .play-description:hover {
     background-color: #f9f9f9; /* Color más oscuro al pasar el ratón */

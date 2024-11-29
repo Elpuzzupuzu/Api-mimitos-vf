@@ -108,7 +108,7 @@ async function comprarCarrito() {
     }
 
     try {
-        const response = await fetch(`https://mimitos.onrender.com/api/cart/compra/test`, {
+        const response = await fetch(`https://mimitos.onrender.com/cart/compra/test`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -73,16 +73,13 @@ h1 {
 
 
 
-
+/* texto de los especiales */
 .heading-1 {
     font-size: 50px; /* Tamaño del texto */
     font-family: 'Arial', sans-serif; /* Estilo de la fuente */
     font-weight: bold; /* Fuente más gruesa */
-    color: #ffffff; /* Color del texto en blanco */
-    text-shadow: 
-        0 0 5px #ffffff,   /* Brillo sutil en blanco */
-        0 0 10px #ffffff,  /* Brillo medio en blanco */
-        0 0 15px #ffffff;  /* Brillo más fuerte en blanco */
+    color: #d431a0; /* Color del texto en blanco */
+   
     animation: flicker 1.5s infinite alternate, color-change 3s infinite alternate; /* Animaciones */
 }
 
@@ -157,9 +154,9 @@ h1 {
 
 :root{
     --primary-color: #fe4ace;
-    --background-color: #1c1c1d;   /* COLOR PRINCIPAL ----------  */
+    --background-color: #1c1c1d;   /* COLOR PRINCIPAL ----------------------------------------------------------  */ 
     --dark-color: #000000;
-
+    /*#edeef2;*/
   
 
 }
@@ -715,7 +712,8 @@ html{
 
 /* Tarjeta del producto */
 .card-product {
-    background-color: #1c1c1d; /* Fondo oscuro elegante */
+    background-color: #1c1c1d; /* Fondo oscuro elegante ----------------------------------*/
+    /*#1c1c1d*/
     padding: 2rem;
     border-radius: 15px; /* Bordes redondeados */
     cursor: pointer;

@@ -1,4 +1,4 @@
-const clevercloud = 'https://api-bikelike-vf.onrender.com';
+const clevercloud = 'https://mimitos.onrender.com';
 const milocal = 'http://localhost:3000';
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Si no están en localStorage, obtenerlos del backend
         try {
             console.log(`Cargando productos de la página ${page} desde el backend`);
-            const response = await fetch(`${milocal}/api/products/slider?page=${page}&pageSize=${pageSize}`);
+            const response = await fetch(`${clevercloud}/api/products/slider?page=${page}&pageSize=${pageSize}`);
             if (!response.ok) throw new Error('Error al obtener los productos');
             const data = await response.json();
 

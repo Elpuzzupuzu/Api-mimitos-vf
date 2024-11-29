@@ -22,54 +22,55 @@ exports.createCart = async (req, res) => {
 
 
 exports.purchaseCart = async (req, res) => {
-    const { id_user, productosEnCarrito } = req.body; // Obtener id_user y productosEnCarrito del cuerpo de la solicitud
+    const { id_user, productosEnCarrito } = req.body;
+
+    // Validaciones iniciales
+    if (!id_user || !Array.isArray(productosEnCarrito) || productosEnCarrito.length === 0) {
+        return res.status(400).json({ error: 'Datos incompletos: se requiere id_user y productosEnCarrito' });
+    }
 
     try {
-        // Procesar cada producto en el carrito
+        // Procesar productos y actualizar stock
+        const updatedProducts = [];
         for (const producto of productosEnCarrito) {
-            // Obtener el producto por ID
             const product = await productService.getProductById(producto.id_product);
-            
+
             if (!product) {
                 return res.status(404).json({ error: `Producto con ID ${producto.id_product} no encontrado` });
             }
 
-            // Verificar que hay suficiente stock
             if (producto.sold > product.stock) {
-                return res.status(400).json({ 
-                    error: `No se pudo procesar la compra: no hay suficiente stock para el producto ${product.name} )` 
+                return res.status(400).json({
+                    error: `No hay suficiente stock para el producto ${product.name} (ID: ${producto.id_product})`
                 });
             }
-        }
 
-        // Si todos los productos tienen suficiente stock, proceder con la actualización y la compra
-        for (const producto of productosEnCarrito) {
-            // Actualizar el stock y el contador de vendidos para cada producto
+            // Actualizar stock y ventas
             await productService.updateProductStock(producto.id_product, producto.sold);
+            updatedProducts.push({ id: producto.id_product, name: product.name });
         }
 
         // Crear un nuevo carrito con los productos comprados
-        const cartData = {
-            id_user: id_user, // Asignar el id_user
-            product_list: productosEnCarrito // Los productos comprados se asignan al campo product_list
-        };
-
-        // Registrar el nuevo carrito con los productos comprados
-        const newCart = await cartService.createCart(cartData);
-
-        // Vaciar el carrito antiguo después de la compra
-        // await cartService.emptyCart(id_user); <--- este era el error
+        const newCart = await cartService.createCart({
+            id_user: id_user,
+            product_list: productosEnCarrito,
+        });
 
         // Responder con éxito
         res.status(200).json({
             message: 'Compra realizada con éxito',
-            newCart // Devolver el nuevo carrito con los productos comprados
+            updatedProducts, // Información sobre los productos actualizados
+            newCart, // El nuevo carrito creado
         });
     } catch (error) {
-        console.error(error);  // Mostrar el error completo en el log para depuración
-        res.status(500).json({ error: error.message });
+        console.error('Error durante la compra:', error);
+        res.status(500).json({ error: 'Ocurrió un error al procesar la compra' });
     }
 };
+
+
+
+
 
 
 
@@ -86,4 +87,24 @@ exports.getAllCarts = async (req, res) => {
     }
 };
 
+
+
+
+
+
+
+// Controlador para obtener los carritos con sus totales
+
+exports.getSales = async (req, res) => {
+    try {
+        // Llamar al servicio para obtener el monto total de todos los carritos
+        const totalSales = await cartService.getSales();
+        
+        // Devolver la respuesta con el monto total
+        res.status(200).json({ totalSales });
+    } catch (error) {
+        console.error('Error al obtener el monto total de las ventas:', error.message);
+        res.status(500).json({ message: 'Error al obtener el monto total de las ventas' });
+    }
+};
 

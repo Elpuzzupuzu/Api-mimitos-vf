@@ -32,7 +32,7 @@ app.use('/categories', categoryRoutes);
 app.use('/api/products', productRoutes);
 app.use('/gallery',galleryRoutes);
 app.use('/users', userRoutes);
-app.use('/cart', cartRoutes);
+app.use('/api/cart', cartRoutes);
 app.use('/api/cart', orderRoutes);
 
 

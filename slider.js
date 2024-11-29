@@ -1,57 +1,107 @@
-const clevercloud = 'https://mimitos.onrender.com';
-const milocal = 'http://localhost:3000';
+let productos = []; // Almacena los productos obtenidos del backend
+// async function getAllProducts() {
+
+//     try {
+//         const response = await fetch('https://api-bikelike-vf.onrender.com/api/products/getall');
+//         if (!response.ok) throw new Error('Network response was not ok');
+//         const products = await response.json();
+
+//         productos = products; // Guardar los productos
+//         //displayProducts(products);    <<<------LOGICA QUE SE ESTA TESTEANDO DEL SLIDER
+//     } catch (error) {
+//         console.error('Error fetching products:', error);
+//     }
+// }
+
+// getAllProducts();
 
 document.addEventListener('DOMContentLoaded', function () {
-    let productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito")) || [];
+    // Variables
+    let productosEnCarrito = JSON.parse(window.localStorage.getItem("productos-en-carrito")) || [];
     let currentPage = 1;
-    const pageSize = 8;
+    const pageSize = 6;
     const numerito = document.getElementById('numerito');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
     const productsContainer = document.getElementById('products-container');
     const slider = document.getElementById('product-slider');
+    actualizarNumerito();
 
+
+    async function fetchProducts(page) {
+        try {
+            const response = await fetch(`https://mimitos.onrender.com/api/products/slider?page=${page}&pageSize=${pageSize}`);
+            if (!response.ok) throw new Error('Error al obtener los productos');
+            const products = await response.json();
+            productos=products;
+
+
+
+
+            // Renderizar los productos en el slider
+            renderProducts(data.products);
+          
+
+
+            // Manejar botones de paginación
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = currentPage >= data.totalPages;
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+
+
+
+
+
+    // Asegurarte que los elementos existan antes de manipularlos
     if (!numerito || !prevBtn || !nextBtn || !productsContainer || !slider) {
         console.error('Algunos elementos del DOM no se encontraron.');
         return;
     }
 
-    // Función para obtener productos de una página desde el backend o localStorage
-    async function fetchProducts(page) {
-        const cachedProducts = JSON.parse(localStorage.getItem(`productos-pagina-${page}`));
-        if (cachedProducts) {
-            console.log(`Cargando productos de la página ${page} desde localStorage`);
-            renderProducts(cachedProducts.products);
-            manejarBotonesPaginacion(cachedProducts.totalPages);
-            return;
-        }
+    // Función para obtener productos desde el backend
 
-        // Si no están en localStorage, obtenerlos del backend
+    async function fetchProducts(page) {
         try {
-            console.log(`Cargando productos de la página ${page} desde el backend`);
-            const response = await fetch(`${clevercloud}/api/products/slider?page=${page}&pageSize=${pageSize}`);
+            const response = await fetch(`https://mimitos.onrender.com/api/products/slider?page=${page}&pageSize=${pageSize}`);
             if (!response.ok) throw new Error('Error al obtener los productos');
             const data = await response.json();
 
-            // Guardar los productos en localStorage para la página actual
-            localStorage.setItem(`productos-pagina-${page}`, JSON.stringify(data));
+
+
+
+            // Renderizar los productos en el slider
             renderProducts(data.products);
-            manejarBotonesPaginacion(data.totalPages);
+          
+
+
+            // Manejar botones de paginación
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = currentPage >= data.totalPages;
         } catch (error) {
-            console.error('Error al obtener los productos:', error);
+            console.error('Error:', error);
         }
     }
 
+
+
+  
+
+    
+
     // Renderizar los productos en el slider
+
     function renderProducts(products) {
         slider.innerHTML = '';
-
+    
         if (!products || products.length === 0) {
             slider.innerHTML = '<p>No se encontraron productos.</p>';
             return;
         }
-        actualizarNumerito();
-
+    
         products.forEach(product => {
             const productDiv = document.createElement('div');
             productDiv.classList.add('product-item');
@@ -61,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <img src="${product.img}" alt="Producto">
                         <span class="discount">-13%</span>
                         <div class="button-group">
+                            <!-- Icono del ojo con data-product-id -->
                             <span class="view-details" data-product-id="${product.id_product}">
                                 <i class="fa-solid fa-eye"></i>
                             </span>
@@ -77,52 +128,67 @@ document.addEventListener('DOMContentLoaded', function () {
                             <i class="fa-regular fa-star"></i>
                         </div>
                         <h3>${product.name}</h3>
+    
                         <button class="add-cart" id="${product.id_product}">
-                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                            <i class="fa-solid fa-basket-shopping"></i>
                         </button>
+    
                         <button class="play-description" id="play-${product.id_product}">
                             <i class="fa-solid fa-volume-high"></i> Escuchar descripción
                         </button>
-                        <p class="price">$${product.price} <span></span></p>
+    
+                        <p class="price">$${product.price} <span></span> </p>
                         <br>
                         <p class="stock">${product.stock} en stock</p>
                     </div>
                 </div>
             `;
-
+    
             slider.appendChild(productDiv);
-
-            // Eventos para acciones del producto
-            productDiv.querySelector('.add-cart').addEventListener('click', () => agregarAlCarrito(product.id_product));
-            productDiv.querySelector(`#play-${product.id_product}`).addEventListener('click', () => reproducirDescripcion(product.description));
+    
+            // Evento para agregar el producto al carrito
+            productDiv.querySelector('.add-cart').addEventListener('click', () => {
+                agregarAlCarrito(product.id_product);
+            });
+    
+            // Evento para reproducir la descripción del producto
+            productDiv.querySelector(`#play-${product.id_product}`).addEventListener('click', () => {
+                reproducirDescripcion(product.description);
+            });
+    
+            // Evento para redirigir a la página de detalles del producto
             productDiv.querySelector('.view-details').addEventListener('click', () => {
                 window.location.href = `producto.html?productId=${product.id_product}`;
             });
         });
     }
-
-    // Función para reproducir la descripción del producto con ResponsiveVoice
-    function reproducirDescripcion(descripcion) {
-        if (responsiveVoice) {
-            responsiveVoice.speak(descripcion, "Spanish Female");
-        } else {
-            console.error('ResponsiveVoice no está disponible.');
-        }
+    
+    
+    // Función para reproducir la descripción usando ResponsiveVoice
+    function reproducirDescripcion(description) {
+        responsiveVoice.speak(description, "Spanish Latin American Female", { rate: 1 });
     }
+    
+    
 
-    // Manejar botones de paginación
-    function manejarBotonesPaginacion(totalPages) {
-        prevBtn.disabled = currentPage === 1;
-        nextBtn.disabled = currentPage >= totalPages;
-    }
+
+
+    
+
+    /// FIN DEL SLIDER PARA REDENDERIZAR ///
+
+    
+    // PARTE LOGICA DEL CARRITO //
+
+
+
 
     // Función para agregar al carrito
     function agregarAlCarrito(productId) {
-        const cachedProducts = JSON.parse(localStorage.getItem(`productos-pagina-${currentPage}`));
-        const productoAgregado = cachedProducts.products.find(product => product.id_product === productId);
+        const productoAgregado = productos.find(producto => producto.id_product === productId);
 
         if (productoAgregado) {
-            const productoEnCarrito = productosEnCarrito.find(product => product.id_product === productId);
+            const productoEnCarrito = productosEnCarrito.find(producto => producto.id_product === productId);
 
             if (productoEnCarrito) {
                 productoEnCarrito.sold++;
@@ -162,6 +228,7 @@ document.addEventListener('DOMContentLoaded', function () {
         fetchProducts(currentPage);
     });
 
-    // Cargar la primera página al inicio
+    // Cargar la primera página y todos los productos al inicio
     fetchProducts(currentPage);
+    // getAllProducts();  <----- la logica de esto debe estar aparte :)
 });

@@ -1,7 +1,7 @@
 // Obtener el productId de la URL de manera dinámica
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('productId'); // Obtiene el ID del producto desde la URL
-const apiUrl = `http://localhost:3000
+const apiUrl = `https://mimitos.on.render.com
 /api/products/${productId}`;
 
 // Variables del carrito

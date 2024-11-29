@@ -2,7 +2,7 @@
 const productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito")) || [];
 
 // Contenedores y elementos de UI
-localStorage.setItem('id_user', '2250');
+localStorage.setItem('id_user', '1');
 
 const contenedorCarritoVacio = document.querySelector("#carrito-vacio");
 const contenedorCarritoProductos = document.querySelector("#carrito-productos");

@@ -67,7 +67,7 @@ h1 {
     width: 200px;
     padding: 15px;
     margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(181, 171, 171, 0.1);
     text-align: center;
 }
 
@@ -154,7 +154,7 @@ h1 {
 
 :root{
     --primary-color: #f212b6;
-    --background-color: #1c1c1d;   /* COLOR PRINCIPAL ----------------------------------------------------------  */ 
+    --background-color: #f9f6f0;   /* COLOR PRINCIPAL ----------------------------------------------------------  */ 
     --dark-color: #000000;
     /*#edeef2;*/
   
@@ -284,7 +284,7 @@ html{
 }
 
 .container-logo i{
-    color: rgb(255, 255, 255);
+    color: rgb(255, 73, 240);
     font-size: 3rem;
 
 }
@@ -293,7 +293,7 @@ html{
 
 .container-logo h1 a{
     text-decoration: none;
-    color: #fffbfb;
+    color:  rgb(255, 73, 240);
     font-size: 3rem;
     text-transform: uppercase;
     letter-spacing: -1px;
@@ -514,7 +514,7 @@ html{
     justify-content: center;
     gap: 1.5rem;
 
-    background-color: #131212;
+    background-color: #bdbabb;
     border-radius: 1rem;
     padding: 1.5rem 0;
 
@@ -535,12 +535,12 @@ html{
 .feature-content span{
     font-weight: 700;    /* color del espan feature content */
     font-size: 1.2rem;
-    color: white;
+    color: rgb(6, 6, 6);
 
 }
 
 .feature-content p{
-    color: #777;
+    color: #212020;
     font-weight: 500;
 
 }
@@ -712,7 +712,7 @@ html{
 
 /* Tarjeta del producto */
 .card-product {
-    background-color: #1c1c1d; /* Fondo oscuro elegante ----------------------------------*/
+    background-color: #ceced1; /* Fondo oscuro elegante ----------------------------------*/
     /*#1c1c1d*/
     padding: 2rem;
     border-radius: 15px; /* Bordes redondeados */
@@ -790,7 +790,7 @@ html{
 }
 
 .stars h3{
-    color:white;
+    color:rgb(245, 18, 146);
 }
 
 
@@ -803,8 +803,8 @@ html{
 }
 
 .price span {
-    font-size: 1rem; /* Tamaño de fuente para el span */
-    color: #f77a0d; /* Color del texto para el span */
+    font-size: 1.5rem; /* Tamaño de fuente para el span */
+    color: #1c1c1c; /* Color del texto para el span */
     text-decoration: line-through; /* Tachar el texto */
 }
 
@@ -873,7 +873,7 @@ html{
     grid-row: 2/3;
     grid-column: 1/-1;
     font-weight: 400;
-    color: white;   /*  COLOR DEL NOMBRE  */
+    color: rgb(196, 32, 133);   /*  COLOR DEL NOMBRE  */
 
     font-size: 1.6rem;
     margin-bottom: 1rem;
@@ -956,7 +956,7 @@ html{
 
 
 .content-card-product .price {
-    font-size: 1.5rem;
+    font-size: 3 rem;
     font-weight: 400;
     color: #ff0aba;
     margin-left: .1rem;
@@ -1107,7 +1107,7 @@ html{
 .content-blog h3{
     font-size: 1.8rem;
     margin-bottom: 1.7rem;
-    color: #f0e139;
+    color: #f039a7;
     font-weight: 500;
 
 }
@@ -1122,7 +1122,7 @@ html{
 .content-blog p{
     margin-top: 1rem;
     font-size: 1.4rem;
-    color:#cfcfcf;
+    color:#1e1d1d;
 
 
 
